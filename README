@@ -1,0 +1,17 @@
+FEMU80 - Fast Emulator for Z80 CPU
+==================================
+
+Femu80 is a Z80 emulator written in Rust. Currently it's in very early WIP stage. Expect something to be broken, or not working at all.
+
+Building
+========
+1. cargo build --release
+2. cargo run
+
+Contributing
+============
+Feel free to contribute!
+
+Licence
+=======
+The code is distributed under the GNU GPL v2.0.
