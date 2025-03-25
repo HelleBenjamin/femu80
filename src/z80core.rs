@@ -1,5 +1,13 @@
 pub const MEM_SIZE: usize = 0xFFFF;
 
+pub enum Flags {
+  CARRY = 0x01,
+  PARITY = 0x04,
+  AUX = 0x10,
+  ZERO = 0x40,
+  SIGN = 0x80
+}
+
 pub struct VirtZ80 {
   // Registers
   pub af: u16,
@@ -39,4 +47,8 @@ impl VirtZ80 {
       mem: [0; MEM_SIZE],
     }
   }
+}
+
+pub fn set_flag(z80: &mut VirtZ80, flag: u8, state: bool) {
+  let _ = (z80.af & 0xff) & (flag as u16) == if state {1} else {0};
 }
